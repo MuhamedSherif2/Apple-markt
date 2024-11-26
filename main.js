@@ -102,18 +102,23 @@ function initApp() {
 }
 initApp();
 
-function search(value){
+function search(query) {
     let div = '';
-    for(let i = 0 ; i<products.length ; i++){
-        if(products[i].name.includes(value)){
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].name.toLocaleLowerCase().includes(query.toLocaleLowerCase())) {
             div += `
-            <img src="${value.image}" class="img">
-            <h3>${value.name}</h3>
-            <h5>${value.price}</h5>
-            <br>
-            <button class="btn btn-primary">Add to Cart</button>
+                <div class="box">
+                    <img src="${products[i].image}" class="img">
+                    <h3>${products[i].name}</h3>
+                    <h5>${products[i].price}</h5>
+                    <br>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
         `;
         }
     }
+    if (div === '') {
+        div = `<p>No products found</p>`;
+    }
     document.getElementById('boxs').innerHTML = div;
-}
+}                                   

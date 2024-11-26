@@ -169,3 +169,22 @@ header label {
 }
 
 /* end product */
+
+
+/* start about */
+.about{
+    background-color: var(--pri-color);
+    height: 100vh;
+    color: var(--fuor-color);
+}
+.up{
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+}
+/* end about */
+
+.contact{
+    height: 80vh;
+    width: 100%;
+}
