@@ -166,6 +166,9 @@ header label {
     header .nav ul .cartlist .listCart{
         width: 70%;
     }
+    .container-md div.d-flex{
+        flex-direction: column;
+    }
 }
 
 /* end product */
@@ -182,9 +185,27 @@ header label {
     bottom: 10%;
     right: 5%;
 }
+@media (max-width:991px) {
+    .about{
+        height: auto;
+    }
+}
 /* end about */
 
 .contact{
     height: 80vh;
     width: 100%;
+}
+.contact .container div iframe{
+    width: 350px;
+    height: 350px;
+}
+@media (max-width:768px) {
+    .contact .container div{
+        flex-direction: column;
+    }
+    .contact .container div iframe{
+        width: 250px;
+        height: 250px;
+    }
 }
