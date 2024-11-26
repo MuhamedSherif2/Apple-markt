@@ -18,7 +18,7 @@
 
 <body>
     <!-- start header  -->
-    <header>
+    <header id="header">
         <div class="nav">
             <h2>Dream</h2>
 
@@ -31,7 +31,7 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="">Log in</a></li>
-                <li><a href="">Sign Up</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
                 <div class="cartlist">
                     <li id="cart" class="cart"><i class="fa-solid fa-bag-shopping"></i>0</li>
                     <div class="listCart" id="listCart">
@@ -58,10 +58,10 @@
     <!-- start product -->
     <section class="product" id="product">
         <div class="container">
-            <div class="d-flex justify-content-around my-3">
+            <div class="d-flex justify-content-around my-3 flex-direction-column">
                 <h1 class="d-flex justify-content-center fw-bold animate__animated animate__flip">Products</h1>
                 <input type="search" aria-label="Search" class="form-control me-2 border-primary fs-4"
-                    style="width: 400px;" onkeyup="search(this.value)">
+                 onkeyup="search(this.value)">
             </div>
             <div id="boxs" class="boxs">
 
@@ -140,7 +140,7 @@
     </section>
     <!-- end contact -->
 
-    <a href="#home" class="up"><button class="btn btn-primary"><i class="fa-solid fa-up-long"></i></button></a>
+    <a href="#header" class="up"><button class="btn btn-primary"><i class="fa-solid fa-up-long"></i></button></a>
 
 
 
