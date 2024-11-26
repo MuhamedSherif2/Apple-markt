@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playwrite+DE+Grund:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- start header  -->
+    <header>
+        <div class="nav">
+            <h2>Dream</h2>
+
+            <input type="checkbox" id="toggle">
+            <label for="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="#product">Product</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Log in</a></li>
+                <li><a href="">Sign Up</a></li>
+                <div class="cartlist">
+                    <li id="cart" class="cart"><i class="fa-solid fa-bag-shopping"></i>0</li>
+                    <div class="listCart" id="listCart">
+                        <p id="close" class="close">X</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </header>
+    <!-- end header -->
+
+
+    <!-- start home -->
+    <section class="home" id="home">
+        <div class="container d-flex flex-column">
+            <h1 class="animate__animated animate__backInDown fs-1 fw-bold">Apple</h1>
+            <p class="fs-4">The best way to buy accessories and phones at the best price</p>
+            <a href="#product"><button class="btn btn-primary fs-4">order now</button></a>
+        </div>
+    </section>
+    <!-- end home -->
+
+
+    <!-- start product -->
+    <section class="product" id="product">
+        <div class="container-md">
+            <div class="d-flex justify-content-around my-3 ">
+                <h1 class="d-flex justify-content-center fw-bold animate__animated animate__flip">Products</h1>
+                <input type="search" aria-label="Search" class="form-control me-2" style="width: 400px;" onkeyup="search(this.value)">
+            </div>
+            <div id="boxs" class="boxs">
+
+            </div>
+        </div>
+    </section>
+    <!-- end product -->
+
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+</body>
+
+</html>
