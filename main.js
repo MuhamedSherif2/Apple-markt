@@ -2,6 +2,9 @@ let cart = document.getElementById('listCart')
 let openCart = document.getElementById('cart')
 let closeCart = document.getElementById('close')
 let boxs = document.getElementById('boxs')
+let showCart = document.querySelector('.showCart')
+let quantity = document.querySelector('.quantity')
+let price = document.querySelector('.total')
 
 
 openCart.addEventListener('click', () => {
@@ -86,6 +89,17 @@ let products = [
     },
 ]
 
+
+let listCards = [];
+if (localStorage.product != null) {
+    listCards = JSON.parse(localStorage.product)
+}
+getProductLocal();
+function getProductLocal() {
+    localStorage.getItem("product");
+    reloadCard();
+}
+
 function initApp() {
     products.forEach((value) => {
         let newDiv = document.createElement('div')
@@ -95,7 +109,7 @@ function initApp() {
             <h3>${value.name}</h3>
             <h5>${value.price}</h5>
             <br>
-            <button class="btn btn-primary">Add to Cart</button>
+            <button class="btn btn-primary" onclick="addToCart(${value.id})">Add to Cart</button>
         `;
         boxs.appendChild(newDiv);
     });
@@ -121,4 +135,62 @@ function search(query) {
         div = `<p>No products found</p>`;
     }
     document.getElementById('boxs').innerHTML = div;
-}                                   
+}
+
+function addToCart(id) {
+    let product = products.find((a) => a.id === id)
+    let productIndex = listCards.findIndex((a) => a.id === id)
+    if (productIndex > -1) {
+        listCards[productIndex].quantity += 1
+    } else {
+        listCards.push({ ...product, quantity: 1 })
+    }
+    reloadCard();
+}
+
+function reloadCard() {
+    showCart.innerHTML = '';
+    let totalPrice = 0;
+    let count = 0;
+    listCards.forEach((value) => {
+        totalPrice += value.price * value.quantity;
+        count += value.quantity
+        let newList = document.createElement('div')
+        newList.classList.add('cart-box')
+        newList.innerHTML = `
+            <img src="${value.image}">
+            <h3>${value.name}</h3>
+            <h5>${value.price}</h5>
+            <div class="d-flex justify-content-center gap-3">
+            <button onclick="changeQuantity(${value.id}, ${value.quantity + 1})" class="btn btn-primary">+</button>
+            <div class="fs-3">${value.quantity}</div>
+            <button onclick="changeQuantity(${value.id}, ${value.quantity - 1})" class="btn btn-danger">-</button>
+            </div>
+        `;
+        showCart.appendChild(newList)
+    })
+    price.innerHTML = totalPrice + "EG";
+    quantity.innerHTML = count;
+    localStorage.setItem("product", JSON.stringify(listCards));
+}
+function changeQuantity(id, newQuantity) {
+    let productIndex = listCards.findIndex((a) => a.id === id);
+    if (newQuantity === 0) {
+        listCards.slice(productIndex, 1);
+    }
+    else {
+        listCards[productIndex].quantity = newQuantity;
+    }
+    reloadCard();
+}
+
+
+
+function sendMessage() {
+    let params = {
+        message: document.getElementById('message').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+    }
+    emailjs.send("service_pnzuub9", "template_wzq7e37", params).then(alert("Message Sent!!"))
+}

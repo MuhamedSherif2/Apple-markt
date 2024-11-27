@@ -90,6 +90,15 @@ header #toggle {
 header label {
     display: none;
 }
+.all{
+    position: absolute;
+    top: 190vh;
+    left: 10px;
+    color: var(--fuor-color);
+}
+.all h5{
+    font-size: 25px;
+}
 
 @media (max-width:991px) {
     header .nav ul .cartlist .listCart{
@@ -193,7 +202,7 @@ header label {
 /* end about */
 
 .contact{
-    height: 80vh;
+    height: 100vh;
     width: 100%;
 }
 .contact .container div iframe{
@@ -201,6 +210,9 @@ header label {
     height: 350px;
 }
 @media (max-width:768px) {
+    .contact{
+        height: 145vh;
+    }
     .contact .container div{
         flex-direction: column;
     }
@@ -208,4 +220,17 @@ header label {
         width: 250px;
         height: 250px;
     }
+}
+.cart-box{
+    background-color: var(--fuor-color);
+    width: 80%;
+    height: 270px;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+.cart-box img{
+    width: 100px;
+    height: 150px;
 }
