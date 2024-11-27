@@ -178,6 +178,9 @@ header label {
     .container-md div.d-flex{
         flex-direction: column;
     }
+    .all{
+        top: 180vh;
+    }
 }
 
 /* end product */
