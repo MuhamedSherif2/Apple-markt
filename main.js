@@ -192,5 +192,5 @@ function sendMessage() {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
     }
-    emailjs.send("service_pnzuub9", "template_wzq7e37", params).then(alert("Message Sent!!"))
+    emailjs.send("service_pnzuub9", "template_m8avtcf", params).then(alert("Message Sent!!"))
 }
